@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quizApp</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="nav">
+        <ul class="navbar">
+            <li ><a href="index.html"></a>Home</li>
+            <li><a href="#"></a>About us</li>
+            <li><a href="quiz.html"></a>Quiz</li>
+        </ul>
+    </div>
+    <h1>Brain Master Quiz</h1>
+    <div id="start-container">
+        <h2>Welcome to the Quiz!</h2>
+        <p>Kindly enter your name to get started!</p>       
+        <div class="input-style">
+            <input type="text" id="nameInput" placeholder="Full name">
+            <button onclick="startQuiz()">Start Quiz</button>
+            <p id="welcome-message" class="hide"></p>
+        </div>
+    </div>
+    <h4 id="welcomeText" style="display: none"></h4>
+    <div id="quiz-container" style="display:none">        
+        <div id="question-container">
+            <p id="question-text"></p>
+        </div>
+        <div id="options-container" class="hide">
+            <button class="option" onclick="selectOption(this)"></button>
+            <button class="option" onclick="selectOption(this)"></button>
+            <button class="option" onclick="selectOption(this)"></button>
+            <button class="option" onclick="selectOption(this)"></button>
+        </div>
+        <div id="feedback-container" class="hide">
+            <p id="feedback-text"></p>
+        </div>
+        <button id="next-btn" class="hide" onclick="nextQuestion()">Next</button>
+        <p id="timer"></p>
+    </div>      
+        
+    <script src="javaScript/quizapp.js"></script>
+</body>
+</html>
