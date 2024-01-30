@@ -1,22 +1,22 @@
-// An arry containing questions, option array and the correct answers to the question choosen from the option list//
+// An array containing questions, option array and the correct answers to the question choosen from the option list//
 const quizData = [
     {
-        question: "What is the plural of 'child'?",
+        question: "1. What is the plural of 'child'?",
         options: ["Childs", "Childes", "Children", "Childs'"],
         correctAnswer: "Children"
     },
     {
-        question: "Which word is a synonym for 'happy'?",
+        question: "2. Which word is a synonym for 'happy'?",
         options: ["Joyful", "Angry", "Sad", "Tired"],
         correctAnswer: "Joyful"
     },
     {
-        question: "What is the opposite of 'brave'?",
+        question: "3. What is the opposite of 'brave'?",
         options: ["Fearful", "Cautious", "Bold", "Confident"],
         correctAnswer: "Fearful"
     },
     {
-        question: "Which sentence is grammatically correct?",
+        question: "4. Which sentence is grammatically correct?",
         options: [
             "I have went to the store yesterday.",
             "I had gone to the store yesterday.",
@@ -26,32 +26,32 @@ const quizData = [
         correctAnswer: "I had gone to the store yesterday."
     },
     {
-        question: "What is the past tense of 'eat'?",
+        question: "5. What is the past tense of 'eat'?",
         options: ["Eaten", "Ate", "Eats", "Eating"],
         correctAnswer: "Ate"
     },
     {
-        question: "Which is a preposition?",
+        question: "6. Which is a preposition?",
         options: ["Run", "On", "Jump", "Quickly"],
         correctAnswer: "On"
     },
     {
-        question: "What is the plural of 'mouse' (the computer device)?",
+        question: "7. What is the plural of 'mouse' (the computer device)?",
         options: ["Mouses", "Mice", "Mice's", "Mousen"],
         correctAnswer: "Mice"
     },
     {
-        question: "Who wrote 'Romeo and Juliet'?",
+        question: "8. Who wrote 'Romeo and Juliet'?",
         options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
         correctAnswer: "William Shakespeare"
     },
     {
-        question: "Which word is a conjunction?",
+        question: "9. Which word is a conjunction?",
         options: ["And", "Run", "Blue", "Happy"],
         correctAnswer: "And"
     },
     {
-        question: "What is the comparative form of 'good'?",
+        question: "10. What is the comparative form of 'good'?",
         options: ["Better", "Best", "Gooder", "Goods"],
         correctAnswer: "Better"
     }
@@ -66,6 +66,11 @@ const nextBtn = document.getElementById("next-btn");
 let currentQuestion = 0;
 let score = 0;
 let timeRemaining = 600; //time in seconds (10 minutes)
+
+
+const questionNumber = () =>{
+    currentQuestion[question].length
+}
 
 // writing a function that will start the quiz by requesting that user enter their names before starting the main quiz//
 function startQuiz() {
@@ -135,7 +140,7 @@ function selectOption(selectedOption) {
     feedbackContainer.classList.remove("hide");
     document.getElementById("next-btn").classList.remove("hide");
 }
-
+//function to end the quiz and display the score//
 function nextQuestion() {
     currentQuestion++;
 
@@ -150,7 +155,7 @@ function endQuiz() {
     const quizContainer = document.getElementById("quiz-container");
     quizContainer.innerHTML = `<h2>Quiz Completed!</h2><p>Your Score: ${score}/${quizData.length}</p>`;
 }
-
+// function to set timer for the quiz//
 function updateTimer() {
     const timer = document.getElementById("timer");
     timer.innerText = `Time Remaining: ${Math.floor(timeRemaining / 60)}:${(timeRemaining % 60).toString().padStart(2, '0')}`;
@@ -161,5 +166,5 @@ function updateTimer() {
         timeRemaining--;
     }
 }
-
+//calling the  startapp function//
 startQuiz();
